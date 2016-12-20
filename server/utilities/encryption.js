@@ -7,8 +7,6 @@ module.exports = {
         return crypto.randomBytes(128).toString('base64');
     },
     generateHashedPassword: (salt, password) => {
-        // Log salt, password
-        console.log(salt, password)
         return crypto
             .createHmac('sha256', salt)
             .update(password)
