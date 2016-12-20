@@ -23,6 +23,6 @@ require('./server/config/route.config.js')(app);
 require('./server/config/passport.config.js')();
 
 // START
-app.listen(3000, () => {
+app.listen(port, () => {
     console.info('[Server] is ready');
 });
