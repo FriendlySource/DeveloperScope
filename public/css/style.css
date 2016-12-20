@@ -1,0 +1,166 @@
+.material-icons, #layout-navigation .navigation-item-link:before {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/material/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/fonts/material/MaterialIcons-Regular.woff2) format("woff2"), url(/fonts/material/MaterialIcons-Regular.woff) format("woff"), url(/fonts/material/MaterialIcons-Regular.ttf) format("truetype"); }
+
+html, html:before, html:after, body, body:before, body:after, main, main:before, main:after,
+div,
+div:before,
+div:after, span, span:before, span:after,
+header,
+header:before,
+header:after, h1, h1:before, h1:after, h2, h2:before, h2:after, h3, h3:before, h3:after, h4, h4:before, h4:after, h5, h5:before, h5:after, h6, h6:before, h6:after,
+nav,
+nav:before,
+nav:after, ul, ul:before, ul:after, li, li:before, li:after, a, a:before, a:after, p, p:before, p:after,
+section,
+section:before,
+section:after, article, article:before, article:after, footer, footer:before, footer:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+#root {
+  font-family: "Calibri", "Arial", sans-serif;
+  font-size: 10px;
+  color: #000; }
+
+body,
+#layout {
+  padding-top: 6.4rem;
+  padding-left: 6.4rem;
+  background-color: #EEE;
+  text-align: center;
+  max-height: 100vh;
+  overflow: auto; }
+  body.expanded,
+  #layout.expanded {
+    padding-left: 25.6rem; }
+    body.expanded #layout-header,
+    #layout.expanded #layout-header {
+      padding-left: 25.6rem; }
+    body.expanded #layout-navigation,
+    #layout.expanded #layout-navigation {
+      width: 25.6rem;
+      transition: width .5s 0s;
+      font-size: initial; }
+      body.expanded #layout-navigation .navigation-item-link,
+      #layout.expanded #layout-navigation .navigation-item-link {
+        padding: 1.2rem; }
+        body.expanded #layout-navigation .navigation-item-link:before,
+        #layout.expanded #layout-navigation .navigation-item-link:before {
+          margin-right: 1rem; }
+
+.clearfix:before, body:before,
+#layout:before {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both; }
+
+#layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-left: 6.4rem;
+  line-height: 6.4rem;
+  max-height: 6.4rem;
+  background-color: #FFF; }
+
+#layout-navigation {
+  position: fixed;
+  top: headerTopBarHeight/10rem;
+  left: 0;
+  background-color: #FFF;
+  height: 100vh;
+  transition: width .5s 0s;
+  font-size: 0; }
+  #layout-navigation .navigation-items {
+    list-style-type: none;
+    text-align: left; }
+    #layout-navigation .navigation-items:hover .navigation-item-link.active {
+      background-color: transparent;
+      color: #666; }
+      #layout-navigation .navigation-items:hover .navigation-item-link.active:before {
+        color: #666; }
+  #layout-navigation .navigation-item-link {
+    display: block;
+    padding: 2rem 1.05rem;
+    text-decoration: none;
+    color: #666;
+    background-color: transparent;
+    transition: all .5s 0s; }
+    #layout-navigation .navigation-item-link.active {
+      color: #FFF;
+      background-color: #666;
+      transition: all .5s 0s; }
+      #layout-navigation .navigation-item-link.active:before {
+        color: #FFF; }
+    #layout-navigation .navigation-item-link:before {
+      content: attr(data-icon);
+      display: inline-block;
+      margin-left: -0.5rem;
+      font-size: 4.8rem;
+      color: #666;
+      vertical-align: middle;
+      line-height: .5; }
+    #layout-navigation .navigation-item-link:hover {
+      color: #FFF !important;
+      background-color: #666 !important;
+      transition: all 0.5s 0s !important; }
+      #layout-navigation .navigation-item-link:hover:before {
+        color: #FFF !important; }
+
+#layout-content {
+  min-height: 100vh;
+  padding: 2rem; }
+  #layout-content .content {
+    background-color: #EEE; }
+
+#layout-footer {
+  position: fixed;
+  bottom: -100%;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  opacity: 0;
+  color: transparent;
+  background-color: transparent; }
+
+.split {
+  display: table;
+  width: 100%;
+  vertical-align: top; }
+  .split > * {
+    display: table-cell; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+#layout-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding-left: convertToMainUnit($navigationCollapsed);
+    line-height: convertToMainUnit($headerTopBarHeight);
+    max-height: convertToMainUnit($headerTopBarHeight);
+    background-color: $white;
+}

@@ -1,0 +1,53 @@
+html, body, main,
+div, span,
+header, h1, h2, h3, h4, h5, h6,
+nav, ul, li, a, p,
+section, article, footer {
+    &,
+    &:before,
+    &:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+html,
+#root {
+    font-family: $defaultFontStack;
+    font-size: #{$mainSize}#{$pixleUnit};
+    color: $defaultTextColor;
+}
+
+body,
+#layout {
+    @extend .clearfix;
+
+    padding-top: convertToMainUnit($headerTopBarHeight);
+    padding-left: convertToMainUnit($navigationCollapsed);
+    background-color: $white-dark;
+    text-align: center;
+    max-height: 100vh;
+    overflow: auto;
+
+    &.expanded {
+        padding-left: convertToMainUnit($navigationExpanded);
+        #layout-header {
+            padding-left: convertToMainUnit($navigationExpanded);
+        }
+
+        #layout-navigation {
+            width: convertToMainUnit($navigationExpanded);
+            transition: width .5s 0s;
+            font-size: initial;
+
+            .navigation-item-link {
+                padding: convertToMainUnit(12);
+
+                &:before {
+                    margin-right: convertToMainUnit(10);
+                }
+            }
+        }
+    }
+}

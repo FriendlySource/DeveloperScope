@@ -1,0 +1,69 @@
+#layout-navigation {
+    position: fixed;
+    top: convertToMainUnit(headerTopBarHeight);
+    left: 0;
+    background-color: $white;
+    height: 100vh;
+    transition: width .5s 0s;
+    font-size: 0;
+
+    .navigation-items {
+        list-style-type: none;
+        text-align: left;
+
+        &:hover {
+            .navigation-item-link {
+                &.active {
+                    background-color: transparent;
+                    color: $base-color-dark;
+
+                    &:before {
+                        color: $base-color-dark;
+                    }
+                }
+            }
+        }
+    }
+    
+    .navigation-item-link {
+        display: block;
+        padding: convertToMainUnit(20) convertToMainUnit(10.5);
+        text-decoration: none;
+        color: $base-color-dark;
+        background-color: transparent;
+        transition: all .5s 0s;
+
+        &.active {
+            color: $base-color-light;
+            background-color: $base-color-dark;
+            transition: all .5s 0s;
+            
+            &:before {
+                color: $base-color-light;
+            }
+        }
+
+        &:before {
+            @extend .material-icons;
+            
+            content: attr(data-icon);
+            display: inline-block;
+            margin-left: convertToMainUnit(-5);
+            font-size: convertToMainUnit(48);
+            color: $base-color-dark;
+            vertical-align: middle;
+            line-height: .5;
+        }
+
+        // TODO: remove important
+        &:hover, {
+            color: $base-color-light!important;
+            background-color: $base-color-dark!important;
+            transition: all .5s 0s!important;
+            
+            &:before {
+                color: $base-color-light!important;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@function convertToMainUnit($value) {
+    @if ($mainUnit == rem) {
+        @return $value / $mainSize#{$mainUnit};
+    }
+
+    @return $value#{$mainUnit};
+}

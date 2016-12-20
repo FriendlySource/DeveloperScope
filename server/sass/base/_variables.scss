@@ -1,0 +1,31 @@
+// UNITS
+$pixleUnit: px;
+$remUnit: rem;
+$percentUnit: %;
+
+// DEFAULT FONT
+$mainUnit: $remUnit !default;
+$mainSize: 10 !default;
+
+$defaultFontStack: 'Calibri', 'Arial', sans-serif;
+$defaultTextColor: #000;
+
+// PREDEFINED
+$headerTopBarHeight: 64;
+$navigationExpanded: 256;
+$navigationCollapsed: 64;
+
+// DEFAULT COLORS
+$white: #FFF;
+$white-dark: #EEE;
+$grey-dark: #666;
+
+// PREDEFINED COLORS
+$base-color-dark: $grey-dark;
+$base-color-med: $white-dark;
+$base-color-light: $white;
+
+// PATHS
+$base-dir: '/';
+$fonts-dir: '#{$base-dir}fonts/';
+$images-dir: '#{$base-dir}img/';

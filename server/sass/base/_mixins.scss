@@ -1,0 +1,17 @@
+@mixin flexboxParent($justify: space-around, $aligning: initial, $flow: row wrap) {
+    display: -webkit-box; 
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: $flow;
+    -ms-flex-flow: $flow;
+    justify-content: $justify;
+    align-items: $aligning;
+}
+
+@mixin flexboxChild($width: auto, $order: auto) {
+    -webkit-box-flex: $order $width;
+    -webkit-flex: $order $width;
+    -ms-flex: $order $width;
+    flex: $order $width;
+}

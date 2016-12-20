@@ -1,0 +1,20 @@
+doctype html
+html#root
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title IntroduceMe
+        link(rel="stylesheet", href="/css/style.css")
+    body#layout.expanded
+        header#layout-header
+            h1 AppTitle
+        
+        nav#layout-navigation
+            include navigation
+
+        main#layout-content
+            .content.main-content
+                block mainContent
+        
+        footer#layout-footer
+            p copyright 2016

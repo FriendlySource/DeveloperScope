@@ -1,0 +1,8 @@
+#layout-content {
+    min-height: 100vh;
+    padding: convertToMainUnit(20);
+
+    .content {
+        background-color: $base-color-med;
+    }
+}
