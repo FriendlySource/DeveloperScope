@@ -1,0 +1,21 @@
+extends ../layout/index
+block mainContent
+    h2 !{mainTitle}
+
+    p MainContent
+
+    form(method='POST', action='/user/register')
+        .form-input
+            label(for="register-username") Username
+            input(type='text' id='register-username' value=username name='username' placeholder='Username')
+        
+        .form-input
+            label(for="register-password") Password
+            input(type='password' id="register-password" value='' name='password' placeholder='Username')
+        
+        .form-input
+            label(for="register-confirm-password") Confirm Password
+            input(type='password' id="register-confirm-password" value='' name='confirmPassword' placeholder='Username')
+        
+        .form-input
+            input(type='submit' value='register now')

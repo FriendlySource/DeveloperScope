@@ -30,10 +30,10 @@ let userSchema = mongoose.Schema({
 
 // AUTHENTICATE
 userSchema.method({
-    authenticate: (passwordInput) => {
-        let possiblePassword = encryption.generateHashedPassword(passwordInput);
+    authenticate: function(passwordInput) {
+        let possiblePassword = encryption.generateHashedPassword(this.salt, passwordInput);
 
-        return possipassword === this.password;
+        return possiblePassword === this.password;
     }
 });
 

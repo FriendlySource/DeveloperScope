@@ -8,4 +8,21 @@
     line-height: convertToMainUnit($headerTopBarHeight);
     max-height: convertToMainUnit($headerTopBarHeight);
     background-color: $white;
+
+    .app-name {
+        display: inline-block;
+        color: $base-color-dark;
+    }
+
+    .top-bar {
+        position: relative;
+    }
+
+    .top-bar-right {
+        float: right;
+
+        li {
+            display: inline-block;
+        }
+    }
 }

@@ -7,13 +7,30 @@ html#root
         link(rel="stylesheet", href="/css/style.css")
     body#layout.expanded
         header#layout-header
-            h1 AppTitle
+            .top-bar
+                h1.app-name AppTitle
+
+                if (currentUser)
+                    ul.top-bar-right
+                        li
+                            a(href='javascript::;') Logout                    
+                else
+                    ul.top-bar-right
+                        li
+                            a(href='/user/register' title='Register') Register
+                        li
+                            a(href='/user/login' title='Login') Login
         
         nav#layout-navigation
             include navigation
 
         main#layout-content
             .content.main-content
+                if (globalMessages && globalMessages.length)
+                    .global-message
+                        each message in globalMessages
+                            p.text.error=message
+
                 block mainContent
         
         footer#layout-footer

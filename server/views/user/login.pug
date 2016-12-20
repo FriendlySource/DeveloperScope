@@ -1,0 +1,17 @@
+extends ../layout/index
+block mainContent
+    h2 !{mainTitle}
+
+    p MainContent
+
+    form(method='POST' action='/user/login')
+        .form-input
+            label(for='login-username') Username
+            input(type='text' name='username' value=username placeholder='Username')
+        
+        .form-input
+            label(for='login-password') Password
+            input(type='password' name='password' placeholder='Password')
+        
+        .form-input
+            input(type='submit' value='Login now')

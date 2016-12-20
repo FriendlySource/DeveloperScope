@@ -19,6 +19,9 @@ require('./server/config/app.config.js')(serverConfig, app);
 // ROUTE CONFIG
 require('./server/config/route.config.js')(app);
 
+// PASSPORT CONFIG
+require('./server/config/passport.config.js')();
+
 // START
 app.listen(3000, () => {
     console.info('[Server] is ready');
