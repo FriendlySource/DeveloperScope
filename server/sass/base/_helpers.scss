@@ -6,3 +6,15 @@
         clear: both;
     }
 }
+
+.text {
+    font-size: convertToMainUnit(16);
+
+    &.error {
+        color: #F00;
+    }
+
+    &.success {
+        color: #0F0;
+    }
+}

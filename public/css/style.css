@@ -84,6 +84,13 @@ body,
   width: 100%;
   clear: both; }
 
+.text {
+  font-size: 1.6rem; }
+  .text.error {
+    color: #F00; }
+  .text.success {
+    color: #0F0; }
+
 #layout-header {
   position: fixed;
   top: 0;
