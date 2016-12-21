@@ -10,7 +10,7 @@ module.exports = {
         port: 3000
     },
     production: {
-        db: process.env.MONGODB_URI,
+        db: `${process.env.OPENSHIFT_MONGODB_DB_URL}introduceme`,
         port: process.env.port,
         rootPath: serverRootPath
     }

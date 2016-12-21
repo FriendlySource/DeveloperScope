@@ -5,7 +5,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const env = process.env.NODE_ENV || 'development';
-const port = process.env.port || 3000;
+const port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+const ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
 const serverConfig = require('./server/config/server.config.js')[env];
 
 const app = express();
@@ -23,6 +25,6 @@ require('./server/config/route.config.js')(app);
 require('./server/config/passport.config.js')();
 
 // START
-app.listen(port, () => {
+app.listen(port, ip, () => {
     console.info('[Server] is ready');
 });
