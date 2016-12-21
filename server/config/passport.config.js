@@ -1,10 +1,13 @@
+'use strict';
+
 const passport = require('passport');
 const LocalPassport = require('passport-local');
 const User = require('mongoose').model('User');
 
 const passportOptions = {
     "usernameField": "email",
-    "passwordField": "password"
+    "passwordField": "password",
+    "session": true
 };
 
 module.exports = () => {

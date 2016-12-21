@@ -10,6 +10,7 @@ module.exports = (app) => {
         .post('/user/register', controllers.user.create)
         .get('/user/login', controllers.user.login)
         .post('/user/login', controllers.user.authenticate)
+        .post('/user/logout', controllers.user.logout)
         .all('*', (req, res) => {
             res.status(404).send('Error');
         })

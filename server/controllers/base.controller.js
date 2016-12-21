@@ -1,3 +1,5 @@
+'use strict';
+
 const homeController = require('./home.controller');
 const userController = require('./user.controller');
 

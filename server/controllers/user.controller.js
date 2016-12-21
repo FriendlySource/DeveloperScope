@@ -14,6 +14,11 @@ module.exports = {
             mainTitle: 'Login' 
         });
     },
+    logout: (req, res) => {
+        req.logout();
+        
+        res.redirect('/');
+    },
     authenticate: (req, res) => {
         let userInput = req.body;
 

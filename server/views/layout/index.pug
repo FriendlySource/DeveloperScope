@@ -13,7 +13,8 @@ html#root
                 if (currentUser)
                     ul.top-bar-right
                         li
-                            a(href='javascript::;') Logout                    
+                            form(id='logout-form' method='POST' action='user/logout')
+                                a(href='javascript: document.getElementById("logout-form").submit();') Logout                    
                 else
                     ul.top-bar-right
                         li
