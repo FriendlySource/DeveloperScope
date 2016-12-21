@@ -10,7 +10,7 @@ module.exports = {
         port: 3000
     },
     production: {
-        db: process.env._MONGO_DB_CONNECTION_STRING,
+        db: process.env.MONGODB_URI,
         port: process.env.port,
         rootPath: serverRootPath
     }

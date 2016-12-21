@@ -1,16 +1,25 @@
 {
-  "name": "introduceme",
+  "name": "introduce-me",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "preStart": "npm install",
-    "start": "gulp",
+    "start": "node index.js",
+    "dev": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "FriendlySource",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendlySource/IntroduceMe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FriendlySource/IntroduceMe/issues"
+  },
+  "homepage": "https://github.com/FriendlySource/IntroduceMe#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
@@ -19,7 +28,8 @@
     "express-session": "^1.14.2",
     "mongoose": "^4.7.1",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-beta6"
   },
   "devDependencies": {
     "browser-sync": "^2.18.2",
