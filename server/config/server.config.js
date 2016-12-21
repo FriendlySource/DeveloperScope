@@ -2,7 +2,8 @@
 
 const path = require('path');
 const serverRootPath = path.normalize(path.join(__dirname, '../../'));
-
+// Log process.env
+console.log(process.env)
 module.exports = {
     development: {
         rootPath: serverRootPath,
