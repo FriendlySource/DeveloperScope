@@ -12,11 +12,11 @@ module.exports = (config, app) => {
         .set('views', `${config.rootPath}server/views`)
         .use(cookieParser())
         .use(bodyParser.urlencoded({extended: true}))
-        .use(session({
-            secret: "eMecudortnI",
-            resave: true,
-            saveUninitialized: true
-        }))
+        // .use(session({
+        //     secret: "eMecudortnI",
+        //     resave: true,
+        //     saveUninitialized: true
+        // }))
         .use(passport.initialize())
         .use(passport.session())
         .use((req, res, next) => {
