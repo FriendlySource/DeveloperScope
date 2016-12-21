@@ -1,3 +1,5 @@
+'use strict';
+
 let encryption = require('../utilities/encryption');
 let User = require('mongoose').model('User');
 
