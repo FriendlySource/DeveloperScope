@@ -26,5 +26,5 @@ require('./server/config/passport.config.js')();
 
 // START
 app.listen(port, ip, () => {
-    console.info('[Server] is ready');
+    console.info(`[Server] is running on ip: ${ip} port: ${port}`);
 });
