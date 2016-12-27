@@ -180,6 +180,9 @@ body,
   padding: 2rem; }
   #layout-content .content {
     background-color: #EEE; }
+  #layout-content .title {
+    font-size: 2rem;
+    text-transform: capitalize; }
 
 #layout-footer {
   position: fixed;

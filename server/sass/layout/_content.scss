@@ -5,4 +5,9 @@
     .content {
         background-color: $base-color-med;
     }
+
+    .title {
+        font-size: convertToMainUnit(20);
+        text-transform: capitalize;
+    }
 }
