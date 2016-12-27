@@ -6,12 +6,14 @@ let User = require('mongoose').model('User');
 module.exports = {
     register: (req, res) => {
         res.render('user/register', {
-            mainTitle: 'Register'
+            mainTitle: 'Register',
+            activePage: 'register'
         });
     },
     login: (req, res) => {
         res.render('user/login', {
-            mainTitle: 'Login' 
+            mainTitle: 'Login',
+            activePage: 'login'
         });
     },
     logout: (req, res) => {
@@ -88,5 +90,10 @@ module.exports = {
                     }
                 })
         }
+    },
+    profile: (req, res) => {
+        res.render('user/profile', {
+            activePage: 'profile'
+        });
     }
 };

@@ -161,6 +161,8 @@ body,
     right: 0; }
     #layout-header .top-bar-right:hover .top-bar-item.active {
       background-color: transparent; }
+      #layout-header .top-bar-right:hover .top-bar-item.active:before {
+        color: #666; }
     #layout-header .top-bar-right li {
       display: inline-block; }
   #layout-header .top-bar-item {

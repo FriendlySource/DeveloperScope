@@ -26,6 +26,10 @@
             .top-bar-item {
                 &.active {
                     background-color: transparent;
+
+                    &:before {
+                        color: $base-color-dark;
+                    }
                 }
             }
         }
@@ -37,6 +41,7 @@
 
     .top-bar-item {
         @extend .navigation-item-link;
+
         font-size: 18px;
         padding: 0 convertToMainUnit(15);
 

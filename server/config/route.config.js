@@ -11,6 +11,7 @@ module.exports = (app) => {
         .get('/user/login', controllers.user.login)
         .post('/user/login', controllers.user.authenticate)
         .post('/user/logout', controllers.user.logout)
+        .get('/user/profile', controllers.user.profile)
         .get('/error', function(req, res) {
             res.render('partial/404', {
                 message: "The page was not found",
