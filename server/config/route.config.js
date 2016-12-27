@@ -11,7 +11,14 @@ module.exports = (app) => {
         .get('/user/login', controllers.user.login)
         .post('/user/login', controllers.user.authenticate)
         .post('/user/logout', controllers.user.logout)
+        .get('/error', function(req, res) {
+            res.render('partial/404', {
+                message: "The page was not found",
+                mainTitle: "Error 404",
+                status: "404"
+            })
+        })
         .all('*', (req, res) => {
-            res.status(404).send('Error');
+            res.redirect('/error');
         })
 }
