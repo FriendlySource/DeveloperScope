@@ -25,4 +25,15 @@
             display: inline-block;
         }
     }
+
+    .top-bar-item {
+        @extend .navigation-item-link;
+        
+        padding: 0 convertToMainUnit(15);
+
+        &:before {
+            margin-left: 0;
+            font-size: 28px;
+        }
+    }
 }

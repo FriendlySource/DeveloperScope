@@ -1,4 +1,4 @@
-.material-icons, #layout-navigation .navigation-item-link:before {
+.material-icons, .navigation-item-link:before, #layout-header .top-bar-item:before {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -70,11 +70,15 @@ body,
       width: 25.6rem;
       transition: width .5s 0s;
       font-size: initial; }
-      body.expanded #layout-navigation .navigation-item-link,
-      #layout.expanded #layout-navigation .navigation-item-link {
+      body.expanded #layout-navigation .navigation-item-link, body.expanded #layout-navigation #layout-header .top-bar-item, #layout-header body.expanded #layout-navigation .top-bar-item,
+      #layout.expanded #layout-navigation .navigation-item-link,
+      #layout.expanded #layout-navigation #layout-header .top-bar-item, #layout-header
+      #layout.expanded #layout-navigation .top-bar-item {
         padding: 1.2rem; }
-        body.expanded #layout-navigation .navigation-item-link:before,
-        #layout.expanded #layout-navigation .navigation-item-link:before {
+        body.expanded #layout-navigation .navigation-item-link:before, body.expanded #layout-navigation #layout-header .top-bar-item:before, #layout-header body.expanded #layout-navigation .top-bar-item:before,
+        #layout.expanded #layout-navigation .navigation-item-link:before,
+        #layout.expanded #layout-navigation #layout-header .top-bar-item:before, #layout-header
+        #layout.expanded #layout-navigation .top-bar-item:before {
           margin-right: 1rem; }
 
 .clearfix:before, body:before,
@@ -90,6 +94,52 @@ body,
     color: #F00; }
   .text.success {
     color: #0F0; }
+
+#layout-navigation {
+  position: fixed;
+  top: headerTopBarHeight/10rem;
+  left: 0;
+  background-color: #FFF;
+  height: 100vh;
+  transition: width .5s 0s;
+  font-size: 0; }
+
+.navigation-items {
+  list-style-type: none;
+  text-align: left; }
+  .navigation-items:hover .navigation-item-link.active, .navigation-items:hover #layout-header .active.top-bar-item, #layout-header .navigation-items:hover .active.top-bar-item {
+    background-color: transparent;
+    color: #666; }
+    .navigation-items:hover .navigation-item-link.active:before, .navigation-items:hover #layout-header .active.top-bar-item:before, #layout-header .navigation-items:hover .active.top-bar-item:before {
+      color: #666; }
+
+.navigation-item-link, #layout-header .top-bar-item {
+  display: block;
+  padding: 2rem 1.05rem;
+  text-decoration: none;
+  color: #666;
+  background-color: transparent;
+  transition: all .5s 0s; }
+  .navigation-item-link.active, #layout-header .active.top-bar-item {
+    color: #FFF;
+    background-color: #666;
+    transition: all .5s 0s; }
+    .navigation-item-link.active:before, #layout-header .active.top-bar-item:before {
+      color: #FFF; }
+  .navigation-item-link:before, #layout-header .top-bar-item:before {
+    content: attr(data-icon);
+    display: inline-block;
+    margin-left: -0.5rem;
+    font-size: 4.8rem;
+    color: #666;
+    vertical-align: middle;
+    line-height: .5; }
+  .navigation-item-link:hover, #layout-header .top-bar-item:hover {
+    color: #FFF !important;
+    background-color: #666 !important;
+    transition: all 0.5s 0s !important; }
+    .navigation-item-link:hover:before, #layout-header .top-bar-item:hover:before {
+      color: #FFF !important; }
 
 #layout-header {
   position: fixed;
@@ -110,50 +160,11 @@ body,
     float: right; }
     #layout-header .top-bar-right li {
       display: inline-block; }
-
-#layout-navigation {
-  position: fixed;
-  top: headerTopBarHeight/10rem;
-  left: 0;
-  background-color: #FFF;
-  height: 100vh;
-  transition: width .5s 0s;
-  font-size: 0; }
-  #layout-navigation .navigation-items {
-    list-style-type: none;
-    text-align: left; }
-    #layout-navigation .navigation-items:hover .navigation-item-link.active {
-      background-color: transparent;
-      color: #666; }
-      #layout-navigation .navigation-items:hover .navigation-item-link.active:before {
-        color: #666; }
-  #layout-navigation .navigation-item-link {
-    display: block;
-    padding: 2rem 1.05rem;
-    text-decoration: none;
-    color: #666;
-    background-color: transparent;
-    transition: all .5s 0s; }
-    #layout-navigation .navigation-item-link.active {
-      color: #FFF;
-      background-color: #666;
-      transition: all .5s 0s; }
-      #layout-navigation .navigation-item-link.active:before {
-        color: #FFF; }
-    #layout-navigation .navigation-item-link:before {
-      content: attr(data-icon);
-      display: inline-block;
-      margin-left: -0.5rem;
-      font-size: 4.8rem;
-      color: #666;
-      vertical-align: middle;
-      line-height: .5; }
-    #layout-navigation .navigation-item-link:hover {
-      color: #FFF !important;
-      background-color: #666 !important;
-      transition: all 0.5s 0s !important; }
-      #layout-navigation .navigation-item-link:hover:before {
-        color: #FFF !important; }
+  #layout-header .top-bar-item {
+    padding: 0 1.5rem; }
+    #layout-header .top-bar-item:before {
+      margin-left: 0;
+      font-size: 28px; }
 
 #layout-content {
   min-height: 100vh;
