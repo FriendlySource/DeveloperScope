@@ -28,7 +28,7 @@
 
     .top-bar-item {
         @extend .navigation-item-link;
-        
+        font-size: 18px;
         padding: 0 convertToMainUnit(15);
 
         &:before {

@@ -161,6 +161,7 @@ body,
     #layout-header .top-bar-right li {
       display: inline-block; }
   #layout-header .top-bar-item {
+    font-size: 18px;
     padding: 0 1.5rem; }
     #layout-header .top-bar-item:before {
       margin-left: 0;
