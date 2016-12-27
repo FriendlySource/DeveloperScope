@@ -10,7 +10,6 @@
     background-color: $white;
 
     .app-name {
-        display: inline-block;
         color: $base-color-dark;
     }
 
@@ -19,7 +18,9 @@
     }
 
     .top-bar-right {
-        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
 
         li {
             display: inline-block;

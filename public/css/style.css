@@ -152,12 +152,13 @@ body,
   max-height: 6.4rem;
   background-color: #FFF; }
   #layout-header .app-name {
-    display: inline-block;
     color: #666; }
   #layout-header .top-bar {
     position: relative; }
   #layout-header .top-bar-right {
-    float: right; }
+    position: absolute;
+    top: 0;
+    right: 0; }
     #layout-header .top-bar-right li {
       display: inline-block; }
   #layout-header .top-bar-item {
