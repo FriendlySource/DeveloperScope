@@ -2,7 +2,8 @@ html, body, main,
 div, span,
 header, h1, h2, h3, h4, h5, h6,
 nav, ul, li, a, p,
-section, article, footer {
+section, article, footer,
+form, input, label {
     &,
     &:before,
     &:after {

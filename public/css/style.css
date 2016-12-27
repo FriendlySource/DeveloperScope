@@ -40,7 +40,10 @@ nav:before,
 nav:after, ul, ul:before, ul:after, li, li:before, li:after, a, a:before, a:after, p, p:before, p:after,
 section,
 section:before,
-section:after, article, article:before, article:after, footer, footer:before, footer:after {
+section:after, article, article:before, article:after, footer, footer:before, footer:after,
+form,
+form:before,
+form:after, input, input:before, input:after, label, label:before, label:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -189,11 +192,33 @@ body,
   color: transparent;
   background-color: transparent; }
 
-.split {
-  display: table;
+.button {
+  color: #FFF;
+  background-color: #666;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize; }
+  .button.success {
+    background-color: #0A0; }
+
+.form {
   width: 100%;
-  vertical-align: top; }
-  .split > * {
-    display: table-cell; }
+  font-size: 1.6rem;
+  text-align: left; }
+
+.form-input {
+  margin-bottom: 2rem; }
+  .form-input:last-of-type {
+    margin-bottom: 0; }
+  .form-input input {
+    display: block;
+    padding: 1rem;
+    width: 100%; }
+  .form-input label {
+    display: inline-block;
+    margin-bottom: 1rem;
+    line-height: 1;
+    cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

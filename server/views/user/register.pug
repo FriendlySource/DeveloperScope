@@ -4,7 +4,7 @@ block mainContent
 
     p MainContent
 
-    form(method='POST', action='/user/register')
+    form.form(method='POST', action='/user/register')
         .form-input
             label(for="register-username") Username
             input(type='text' id='register-username' value=username name='username' placeholder='Username')
@@ -18,4 +18,4 @@ block mainContent
             input(type='password' id="register-confirm-password" value='' name='confirmPassword' placeholder='Username')
         
         .form-input
-            input(type='submit' value='register now')
+            input.button.success(type='submit' value='register now')

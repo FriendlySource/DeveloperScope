@@ -4,14 +4,14 @@ block mainContent
 
     p MainContent
 
-    form(method='POST' action='/user/login')
+    form.form(method='POST' action='/user/login')
         .form-input
             label(for='login-username') Username
-            input(type='text' name='username' value=username placeholder='Username')
+            input(type='text' id="login-username" name='username' value=username placeholder='Username')
         
         .form-input
             label(for='login-password') Password
-            input(type='password' name='password' placeholder='Password')
+            input(type='password' id='login-password' name='password' placeholder='Password')
         
         .form-input
-            input(type='submit' value='Login now')
+            input.button.success(type='submit' value='Login now')
