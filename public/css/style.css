@@ -159,6 +159,8 @@ body,
     position: absolute;
     top: 0;
     right: 0; }
+    #layout-header .top-bar-right:hover .top-bar-item.active {
+      background-color: transparent; }
     #layout-header .top-bar-right li {
       display: inline-block; }
   #layout-header .top-bar-item {

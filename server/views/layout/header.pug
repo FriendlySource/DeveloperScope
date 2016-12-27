@@ -1,0 +1,25 @@
+-
+    var headerItemsNotLoggedIn = [
+        { "label": "Login", "href": "/user/login", "icon": "" },
+        { "label": "Register", "href": "/user/register", "icon": "" }
+    ];
+
+    var headerItemsLoggedIn = [
+        { "label": "Profile", "href": "/user/profile", "icon": "account_circle" },
+        { "label": "Logout", "href": "javascript:document.getElementById('logout-form').submit();", "icon": "exit_to_app" }
+    ];
+
+.top-bar
+    h1.app-name Developer Scope
+
+    ul.top-bar-right
+        if (currentUser)
+            li
+                a(class='top-bar-item' href='user/profile' data-icon='account_circle')
+            li
+                form(id='logout-form' method='POST' action='user/logout')
+                    a(href='javascript: document.getElementById("logout-form").submit();' class='top-bar-item' data-icon='exit_to_app')    
+        else
+            each item in headerItemsNotLoggedIn
+                li
+                    a(href=item.href class='top-bar-item' data-icon=item.icon) !{item.label}

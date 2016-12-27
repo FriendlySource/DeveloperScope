@@ -22,6 +22,14 @@
         top: 0;
         right: 0;
 
+        &:hover {
+            .top-bar-item {
+                &.active {
+                    background-color: transparent;
+                }
+            }
+        }
+
         li {
             display: inline-block;
         }
