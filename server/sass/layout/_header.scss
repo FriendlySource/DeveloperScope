@@ -8,7 +8,8 @@
     line-height: convertToMainUnit($headerTopBarHeight);
     max-height: convertToMainUnit($headerTopBarHeight);
     background-color: $white;
-
+    box-shadow: 0 0 convertToMainUnit(4) 0 $black;
+    
     .app-name {
         color: $baseColorDark;
     }

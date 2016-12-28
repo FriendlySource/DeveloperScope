@@ -169,7 +169,8 @@ body,
   padding-left: 6.4rem;
   line-height: 6.4rem;
   max-height: 6.4rem;
-  background-color: #FFF; }
+  background-color: #FFF;
+  box-shadow: 0 0 0.4rem 0 #000; }
   #layout-header .app-name {
     color: #666; }
   #layout-header .top-bar {
