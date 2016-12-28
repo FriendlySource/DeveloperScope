@@ -16,10 +16,10 @@
         .navigation-item-link {
             &.active {
                 background-color: transparent;
-                color: $base-color-dark;
+                color: $baseColorDark;
 
                 &:before {
-                    color: $base-color-dark;
+                    color: $baseColorDark;
                 }
             }
         }
@@ -30,17 +30,17 @@
     display: block;
     padding: convertToMainUnit(20) convertToMainUnit(10.5);
     text-decoration: none;
-    color: $base-color-dark;
+    color: $baseColorDark;
     background-color: transparent;
     transition: all .5s 0s;
 
     &.active {
-        color: $base-color-light;
-        background-color: $base-color-dark;
+        color: $baseColorLight;
+        background-color: $baseColorDark;
         transition: all .5s 0s;
         
         &:before {
-            color: $base-color-light;
+            color: $baseColorLight;
         }
     }
 
@@ -51,19 +51,19 @@
         display: inline-block;
         margin-left: convertToMainUnit(-5);
         font-size: convertToMainUnit(48);
-        color: $base-color-dark;
+        color: $baseColorDark;
         vertical-align: middle;
         line-height: .5;
     }
 
     // TODO: remove important
     &:hover, {
-        color: $base-color-light!important;
-        background-color: $base-color-dark!important;
+        color: $baseColorLight!important;
+        background-color: $baseColorDark!important;
         transition: all .5s 0s!important;
         
         &:before {
-            color: $base-color-light!important;
+            color: $baseColorLight!important;
         }
     }
 }

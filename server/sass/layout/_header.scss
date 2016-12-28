@@ -10,7 +10,7 @@
     background-color: $white;
 
     .app-name {
-        color: $base-color-dark;
+        color: $baseColorDark;
     }
 
     .top-bar {
@@ -28,7 +28,7 @@
                     background-color: transparent;
 
                     &:before {
-                        color: $base-color-dark;
+                        color: $baseColorDark;
                     }
                 }
             }

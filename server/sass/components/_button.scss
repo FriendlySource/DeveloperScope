@@ -1,12 +1,8 @@
 .button {
     color: $white;
-    background-color: $base-color-dark;
+    background-color: $baseColorDark;
     border: none;
     outline: none;
     cursor: pointer;
     text-transform: capitalize;
-    
-    &.success {
-        background-color: #0A0;       
-    }
 }

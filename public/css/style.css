@@ -101,10 +101,18 @@ body,
 
 .text {
   font-size: 1.6rem; }
-  .text.error {
-    color: #F00; }
-  .text.success {
-    color: #0F0; }
+
+.success.button {
+  background-color: #0A0; }
+
+.success.text {
+  color: #0A0; }
+
+.error.button {
+  background-color: #A00; }
+
+.error.text {
+  color: #A00; }
 
 #layout-navigation {
   position: fixed;
@@ -210,8 +218,6 @@ body,
   outline: none;
   cursor: pointer;
   text-transform: capitalize; }
-  .button.success {
-    background-color: #0A0; }
 
 .form {
   width: 100%;
@@ -226,6 +232,9 @@ body,
     display: block;
     padding: 1rem;
     width: 100%; }
+    .form-input input:focus {
+      background-color: #FFF;
+      color: #FFF; }
   .form-input label {
     display: inline-block;
     margin-bottom: 1rem;

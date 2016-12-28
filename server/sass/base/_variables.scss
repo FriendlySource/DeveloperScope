@@ -4,7 +4,7 @@ $remUnit: rem;
 $percentUnit: %;
 
 // CUSTOM FONT
-$robotoRegular: Roboto-Regular;
+$robotoRegular: 'Roboto-Regular';
 
 // DEFAULT FONT
 $mainUnit: $remUnit !default;
@@ -20,15 +20,18 @@ $navigationCollapsed: 64;
 
 // DEFAULT COLORS
 $white: #FFF;
-$white-dark: #EEE;
-$grey-dark: #666;
+$whiteDark: #EEE;
+$greyDark: #666;
 
 // PREDEFINED COLORS
-$base-color-dark: $grey-dark;
-$base-color-med: $white-dark;
-$base-color-light: $white;
+$baseColorDark: $greyDark;
+$baseColorMed: $whiteDark;
+$baseColorLight: $white;
+
+// BACKGROUNDS
+$focusBackground: $white;
 
 // PATHS
-$base-dir: '/';
-$fonts-dir: '#{$base-dir}fonts/';
-$images-dir: '#{$base-dir}img/';
+$baseDir: '/';
+$fontsDir: '#{$baseDir}fonts/';
+$imagesDir: '#{$baseDir}img/';

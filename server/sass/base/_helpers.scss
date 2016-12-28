@@ -9,12 +9,24 @@
 
 .text {
     font-size: convertToMainUnit(16);
+}
 
-    &.error {
-        color: #F00;
+.success {
+    &.button {
+        background-color: #0A0;       
     }
 
-    &.success {
-        color: #0F0;
+    &.text {
+        color: #0A0;       
+    }
+}
+
+.error {
+    &.button {
+        background-color: #A00;       
+    }
+
+    &.text {
+        color: #A00;       
     }
 }

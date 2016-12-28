@@ -15,6 +15,11 @@
         display: block;
         padding: convertToMainUnit(10);
         width: 100%;
+
+        &:focus {
+            background-color: $focusBackground;
+            color: $baseColorLight;
+        }
     }
 
     label {
