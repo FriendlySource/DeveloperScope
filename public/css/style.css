@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .material-icons, .navigation-item-link:before, #layout-header .top-bar-item:before {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -28,6 +29,13 @@
   /* For IE6-8 */
   src: local("Material Icons"), local("MaterialIcons-Regular"), url(/fonts/material/MaterialIcons-Regular.woff2) format("woff2"), url(/fonts/material/MaterialIcons-Regular.woff) format("woff"), url(/fonts/material/MaterialIcons-Regular.ttf) format("truetype"); }
 
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("/fonts/roboto/Roboto-Regular.eot");
+  src: local("☺"), url("/fonts/roboto/Roboto-Regular.woff") format("woff"), url("/fonts/roboto/Roboto-Regular.ttf") format("truetype"), url("fonts/Roboto-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html, html:before, html:after, body, body:before, body:after, main, main:before, main:after,
 div,
 div:before,
@@ -50,7 +58,7 @@ form:after, input, input:before, input:after, label, label:before, label:after {
 
 html,
 #root {
-  font-family: "Calibri", "Arial", sans-serif;
+  font-family: Roboto-Regular, "Calibri", "Arial", sans-serif;
   font-size: 10px;
   color: #000; }
 

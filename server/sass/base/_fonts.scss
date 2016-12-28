@@ -9,3 +9,11 @@
        url(#{$fonts-dir}material/MaterialIcons-Regular.woff) format('woff'),
        url(#{$fonts-dir}material/MaterialIcons-Regular.ttf) format('truetype');
 }
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('#{$fonts-dir}roboto/Roboto-Regular.eot');
+	src: local('☺'), url('#{$fonts-dir}roboto/Roboto-Regular.woff') format('woff'), url('#{$fonts-dir}roboto/Roboto-Regular.ttf') format('truetype'), url('fonts/Roboto-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

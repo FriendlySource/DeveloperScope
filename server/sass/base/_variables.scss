@@ -3,11 +3,14 @@ $pixleUnit: px;
 $remUnit: rem;
 $percentUnit: %;
 
+// CUSTOM FONT
+$robotoRegular: Roboto-Regular;
+
 // DEFAULT FONT
 $mainUnit: $remUnit !default;
 $mainSize: 10 !default;
 
-$defaultFontStack: 'Calibri', 'Arial', sans-serif;
+$defaultFontStack: #{$robotoRegular}, 'Calibri', 'Arial', sans-serif;
 $defaultTextColor: #000;
 
 // PREDEFINED
