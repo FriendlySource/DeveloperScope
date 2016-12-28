@@ -6,6 +6,7 @@
     height: 100vh;
     transition: width .5s 0s;
     font-size: 0;
+    box-shadow: 0 0 convertToMainUnit(1) $black;
 }
 
 .navigation-items {
@@ -28,7 +29,7 @@
     
 .navigation-item-link {
     display: block;
-    padding: convertToMainUnit(20) convertToMainUnit(10.5);
+    padding: convertToMainUnit(22.5) convertToMainUnit(15.5);
     text-decoration: none;
     color: $baseColorDark;
     background-color: transparent;
@@ -50,7 +51,7 @@
         content: attr(data-icon);
         display: inline-block;
         margin-left: convertToMainUnit(-5);
-        font-size: convertToMainUnit(48);
+        font-size: convertToMainUnit(38);
         color: $baseColorDark;
         vertical-align: middle;
         line-height: .5;
