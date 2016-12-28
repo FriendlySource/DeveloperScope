@@ -12,6 +12,7 @@
     
     .app-name {
         color: $baseColorDark;
+        text-decoration: none;
     }
 
     .top-bar {
@@ -27,6 +28,7 @@
             .top-bar-item {
                 &.active {
                     background-color: transparent;
+                    color: $baseColorDark;
 
                     &:before {
                         color: $baseColorDark;

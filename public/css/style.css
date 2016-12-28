@@ -172,7 +172,8 @@ body,
   background-color: #FFF;
   box-shadow: 0 0 0.4rem 0 #000; }
   #layout-header .app-name {
-    color: #666; }
+    color: #666;
+    text-decoration: none; }
   #layout-header .top-bar {
     position: relative; }
   #layout-header .top-bar-right {
@@ -180,7 +181,8 @@ body,
     top: 0;
     right: 0; }
     #layout-header .top-bar-right:hover .top-bar-item.active {
-      background-color: transparent; }
+      background-color: transparent;
+      color: #666; }
       #layout-header .top-bar-right:hover .top-bar-item.active:before {
         color: #666; }
     #layout-header .top-bar-right li {
