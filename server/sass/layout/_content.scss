@@ -1,6 +1,7 @@
 #layout-content {
-    min-height: 100vh;
+    max-height: 90vh;
     padding: convertToMainUnit(20);
+    overflow: auto;
 
     .content {
         background-color: $baseColorMed;

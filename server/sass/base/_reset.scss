@@ -29,7 +29,7 @@ body,
     background-color: $whiteDark;
     text-align: center;
     max-height: 100vh;
-    overflow: auto;
+    overflow: hidden;
 
     &.expanded {
         padding-left: convertToMainUnit($navigationExpanded);
