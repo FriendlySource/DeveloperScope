@@ -29,7 +29,8 @@ $baseColorMed: $whiteDark;
 $baseColorLight: $white;
 
 // BACKGROUNDS
-$focusBackground: $white;
+$focusBackground: inherit;
+$focusColor: inherit;
 
 // PATHS
 $baseDir: '/';

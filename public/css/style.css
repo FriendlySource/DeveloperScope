@@ -232,9 +232,9 @@ body,
     display: block;
     padding: 1rem;
     width: 100%; }
-    .form-input input:focus {
-      background-color: #FFF;
-      color: #FFF; }
+    .form-input input[type="text"]:focus, .form-input input[type="email"]:focus, .form-input input[type="password"]:focus {
+      background-color: inherit;
+      color: inherit; }
   .form-input label {
     display: inline-block;
     margin-bottom: 1rem;

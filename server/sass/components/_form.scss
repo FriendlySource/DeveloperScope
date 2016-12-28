@@ -16,9 +16,13 @@
         padding: convertToMainUnit(10);
         width: 100%;
 
-        &:focus {
-            background-color: $focusBackground;
-            color: $baseColorLight;
+        &[type="text"],
+        &[type="email"],
+        &[type="password"] {
+            &:focus {
+                background-color: $focusBackground;
+                color: $focusColor;
+            }
         }
     }
 
