@@ -93,6 +93,7 @@ module.exports = {
     },
     profile: (req, res) => {
         res.render('user/profile', {
+            mainTitle: `${req.user.username} Profile`,
             activePage: 'profile'
         });
     }
