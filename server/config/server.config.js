@@ -20,7 +20,7 @@ module.exports = {
         db: {
             port: process.env.MONGODB_PORT,
             domain: process.env.MONGODB_DOMAIN,
-            name: process.env.MONGODB_NAME,
+            name: process.env.MONGODB_DATABASE,
             connection: process.env.MONGODB_CONNECTION_STRING
         }
     }
