@@ -205,11 +205,16 @@ body,
   height: calc(100vh - 6.4rem);
   padding: 2rem;
   overflow: auto; }
-  #layout-content .content {
-    background-color: #EEE; }
-  #layout-content .title {
-    font-size: 2rem;
-    text-transform: capitalize; }
+
+.content {
+  background-color: #EEE; }
+  .content .title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem; }
+    .content .title.left {
+      text-align: left; }
 
 #layout-footer {
   position: fixed;
@@ -250,6 +255,24 @@ body,
     display: inline-block;
     margin-bottom: 1rem;
     line-height: 1;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 1.4rem; }
+
+.page-article {
+  margin-bottom: 2rem; }
+  .page-article:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    border-bottom: solid 0.1rem #FFF; }
+  .page-article .title {
+    font-size: 1.4rem;
+    border-bottom: solid 0.1rem #FFF;
+    color: #FFF;
+    text-shadow: 0 0 0.2rem #666;
+    text-transform: uppercase; }
+    .page-article .title.left {
+      margin: 1rem 0;
+      padding-left: 0;
+      padding-right: 0; }
 
 /*# sourceMappingURL=style.css.map */
