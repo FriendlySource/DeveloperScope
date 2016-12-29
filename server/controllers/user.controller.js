@@ -101,34 +101,49 @@ module.exports = {
             csrfToken: req.csrfToken()
         });
     },
-    // TODO: IMPROVE ERRORS
     updateProfile: (req, res) => {
-        let profileUpdates = req.body;
+        let profileUpdates = req.body,
+            isFormValid = true;
+
+        profileUpdates.globalMessages = [];
 
         if (!profileUpdates.oldPassword) {
             delete profileUpdates.password;
+        } else {
+            if (!req.user.authenticate(profileUpdates.oldPassword)) {
+                profileUpdates.globalMessages.push('Old Password is not correct');
+                isFormValid = false;
+                delete profileUpdates.password;
+            } else {
+                if (validation.password.isWhitespace(profileUpdates.password)) {
+                    profileUpdates.globalMessages.push('Password cannot be whitespace');
+                    isFormValid = false;
+                    delete profileUpdates.password;
+                }
+                
+                if (!validation.password.willPassRequiredLength(profileUpdates.password, 6)) {
+                    profileUpdates.globalMessages.push('Password must be atleast 6 characters long');
+                    isFormValid = false;
+                    delete profileUpdates.password;
+                }
+            }
         }
         
-        if (req.user.authenticate(profileUpdates.oldPassword)) {
-            if (validation.password.isWhitespace()) {
-                console.log('PASSWORD CANNOT BE WHITESPACE')
-            } else if (!validation.password.willPassRequiredLength(profileUpdates.password, 6)) {
-                delete profileUpdates.password;
-                
-                console.log('PASSWORD DOES NOT MATCH REQURIED LENGTH')
-            } else {
+        if (isFormValid) {
+            if (profileUpdates.password) {
                 profileUpdates.password = encryption.generateHashedPassword(req.user.salt, profileUpdates.password);
             }
+
+            User.findOneAndUpdate({ "username": req.user.username }, profileUpdates, { upsert: true }, (err, doc) => {
+                if (err) {
+                    console.error(err)
+                }
+            });
+            
+            res.redirect('/user/profile');
         } else {
-            delete profileUpdates.password;
+            profileUpdates.csrfToken = req.csrfToken();
+            res.render('user/profile', profileUpdates);
         }
-
-        User.findOneAndUpdate({ "username": req.user.username }, profileUpdates, { upsert: true }, (err, doc) => {
-            if (err) {
-                console.error(err)
-            }
-        });
-
-        res.redirect('/user/profile');
     }
 };
