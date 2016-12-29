@@ -2,6 +2,7 @@
 
 let encryption = require('../utilities/encryption');
 let validation = require('../utilities/validation');
+let messagesConstants = require('../utilities/messages-constants');
 let User = require('mongoose').model('User');
 
 module.exports = {
@@ -69,7 +70,7 @@ module.exports = {
             User.find({ username: userInput.username })
                 .then(user => {
                     if (user.length) {
-                        userInput.globalMessages.push(`${userInput.username} is already in use`);
+                        userInput.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.inUse, ["Username", userInput.username]));
 
                         res.render('user/register', userInput);
                     } else {
@@ -111,7 +112,7 @@ module.exports = {
             delete profileUpdates.password;
         } else {
             if (!req.user.authenticate(profileUpdates.oldPassword)) {
-                profileUpdates.globalMessages.push('Old Password is not correct');
+                profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.incorrectInput, ["Old Password"]));
                 isFormValid = false;
                 delete profileUpdates.password;
             } else {
