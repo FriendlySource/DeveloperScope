@@ -5,7 +5,7 @@ const encryption = require('../utilities/encryption');
 const constantMsg = require('../utilities/messages-constants.js');
 
 // ADMIN DEFAULTS
-const defaultAdminPassword = 'admin';
+const defaultAdminPassword = 'password';
 const defaultAdminUsername = 'admin';
 const defaultAdminRoles = ['admin'];
 const defaultAdminName = 'Admin';
