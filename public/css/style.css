@@ -192,6 +192,12 @@ body,
       color: #666; }
       #layout-header .top-bar-right:hover .top-bar-item.active:before {
         color: #666; }
+      #layout-header .top-bar-right:hover .top-bar-item.active:hover {
+        color: #FFF;
+        background-color: #666;
+        transition: all .5s 0s; }
+        #layout-header .top-bar-right:hover .top-bar-item.active:hover:before {
+          color: #FFF; }
     #layout-header .top-bar-right li {
       display: inline-block; }
   #layout-header .top-bar-item {

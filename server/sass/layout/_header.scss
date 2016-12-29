@@ -33,6 +33,16 @@
                     &:before {
                         color: $baseColorDark;
                     }
+
+                    &:hover {
+                        color: $baseColorLight;
+                        background-color: $baseColorDark;
+                        transition: all .5s 0s;
+                        
+                        &:before {
+                            color: $baseColorLight;
+                        }
+                    }
                 }
             }
         }
