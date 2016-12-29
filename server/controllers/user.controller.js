@@ -29,7 +29,7 @@ module.exports = {
         userInput.globalMessages = [];
         
         if (!userInput.username || !userInput.password) {
-            userInput.globalMessages.push('Please fill out all required fields');
+            userInput.globalMessages.push(messagesConstants.error.fieldsRequired);
 
             res.render('user/login', userInput);
         } else {
@@ -37,14 +37,14 @@ module.exports = {
                 .findOne({ username: userInput.username })
                     .then(foundUser => {
                         if (!foundUser.authenticate(userInput.password)) {
-                            userInput.globalMessages.push('Invalid password or username');
+                            userInput.globalMessages.push(messagesConstants.error.invalidCredentials);
 
                             res.render('user/login', userInput)
                         } else {
                             req.login(foundUser, (err, user) => {
                                 if (err) {
                                     res.render('user/register', {
-                                        globalMessages: 'Server Internal Error: 500'
+                                        globalMessages: messagesConstants.error.internal
                                     })
                                 } else {
                                     res.redirect('/');
@@ -59,11 +59,11 @@ module.exports = {
         userInput.globalMessages = [];
         
         if (!userInput.username || !userInput.password || !userInput.confirmPassword) {
-            userInput.globalMessages.push('Please fill out all required fields')
+            userInput.globalMessages.push(messagesConstants.error.fieldsRequired)
 
             res.render('user/register', userInput);
         } else if (userInput.password !== userInput.confirmPassword) {
-            userInput.globalMessages.push('Both passwords does not match');
+            userInput.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.notMatch, ["Confirm Password", "Password"]));
 
             res.render('user/register', userInput);
         } else {
@@ -82,7 +82,7 @@ module.exports = {
                                 req.login(user, (err, user) => {
                                     if (err) {
                                         res.render('user/register', {
-                                            globalMessages: 'Server Internal Error: 500'
+                                            globalMessages: messagesConstants.error.internal
                                         })
                                     } else {
                                         res.redirect('/');
@@ -117,19 +117,19 @@ module.exports = {
                 delete profileUpdates.password;
             } else {
                 if (validation.password.isWhitespace(profileUpdates.password)) {
-                    profileUpdates.globalMessages.push('Password cannot be whitespace');
+                    profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.whiteSpace, ["Password"]));
                     isFormValid = false;
                     delete profileUpdates.password;
                 }
                 
                 if (!validation.password.willPassRequiredLength(profileUpdates.password, 6)) {
-                    profileUpdates.globalMessages.push('Password must be atleast 6 characters long');
+                    profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.minLength, ["Password", 6]));
                     isFormValid = false;
                     delete profileUpdates.password;
                 }
 
                 if (!validation.password.willMatchConfirm(profileUpdates.password, profileUpdates.confirmPassword)) {
-                    profileUpdates.globalMessages.push('Confirm Password does not match New Password');
+                    profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.notMatch, ["Confirm Password", "Password"]));
                     isFormValid = false;
                     delete profileUpdates.password;
                 }
