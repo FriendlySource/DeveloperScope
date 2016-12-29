@@ -13,7 +13,7 @@ const auth = {
     },
     isInRole: (role) => {
         return (req, res, next) => {
-            if (req.isAuthenticated() && req.user.role.indexof(role) > -1) {
+            if (req.isAuthenticated() && req.user.roles.indexof(role) > -1) {
                 next();
             } else {
                 res.redirect('/');
