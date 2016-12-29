@@ -4,6 +4,21 @@ block mainContent
         h2.title !{mainTitle}
 
         form.form(method='POST' action='/user/profile')
+            //- NAME
+            article.page-article
+                h2.title.left Change Name
+
+                .form-input
+                    label(for='name') Name
+                    input(type="text" id="name" name='name' value=name placeholder='Name' required)
+            //- EMAIL
+            article.page-article
+                h2.title.left Change Email
+
+                .form-input
+                    label(for='email') Email
+                    input(type="email" id="email" name='email' value=email placeholder='Email' required)
+
             //- PASSWORD
             article.page-article
                 h2.title.left Change Password
@@ -14,16 +29,9 @@ block mainContent
 
                 .form-input
                     label(for='new-password') New Password
-                    input(type="password" id="new-password" placeholder='New Password' name='newPassword')
-            //- NAME
-            article.page-article
-                h2.title.left Change Name
-
-                .form-input
-                    label(for='name') Name
-                    input(type="text" id="name" placeholder='Name' name='name')
+                    input(type="password" id="new-password" placeholder='New Password' name='password')
                 
                 //- SUBMIT
                 .form-input
                     input(type='submit' class='button success' value='Save')
-                    input(type='hidden' name='_csrf' value=csrf)
+                    input(type='hidden' name='_csrf' value=csrfToken)
