@@ -1,0 +1,23 @@
+.page-article {
+    margin-bottom: convertToMainUnit(20);
+
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: convertToMainUnit(20);
+        border-bottom: solid convertToMainUnit(1) $baseColorLight;
+    }
+
+    .title {
+        font-size: convertToMainUnit(14);
+        border-bottom: solid convertToMainUnit(1) $baseColorLight;
+        color: $baseColorLight;
+        text-shadow: 0 0 convertToMainUnit(2) $baseColorDark;
+        text-transform: uppercase;
+
+        &.left {
+            margin: convertToMainUnit(10) 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
