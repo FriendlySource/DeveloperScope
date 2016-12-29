@@ -114,24 +114,20 @@ module.exports = {
             if (!req.user.authenticate(profileUpdates.oldPassword)) {
                 profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.incorrectInput, ["Old Password"]));
                 isFormValid = false;
-                delete profileUpdates.password;
             } else {
                 if (validation.password.isWhitespace(profileUpdates.password)) {
                     profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.whiteSpace, ["Password"]));
                     isFormValid = false;
-                    delete profileUpdates.password;
                 }
                 
                 if (!validation.password.willPassRequiredLength(profileUpdates.password, 6)) {
                     profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.minLength, ["Password", 6]));
                     isFormValid = false;
-                    delete profileUpdates.password;
                 }
 
                 if (!validation.password.willMatchConfirm(profileUpdates.password, profileUpdates.confirmPassword)) {
                     profileUpdates.globalMessages.push(messagesConstants.generateMessage(messagesConstants.error.notMatch, ["Confirm Password", "Password"]));
                     isFormValid = false;
-                    delete profileUpdates.password;
                 }
             }
         }
