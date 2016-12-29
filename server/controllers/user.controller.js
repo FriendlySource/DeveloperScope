@@ -1,6 +1,7 @@
 'use strict';
 
 let encryption = require('../utilities/encryption');
+let validation = require('../utilities/validation');
 let User = require('mongoose').model('User');
 
 module.exports = {
@@ -91,10 +92,43 @@ module.exports = {
                 })
         }
     },
-    profile: (req, res) => {
+    showProfile: (req, res) => {
         res.render('user/profile', {
             mainTitle: `${req.user.username} Profile`,
-            activePage: 'profile'
+            name: req.user.name,
+            email: req.user.email,
+            activePage: 'profile',
+            csrfToken: req.csrfToken()
         });
+    },
+    // TODO: IMPROVE ERRORS
+    updateProfile: (req, res) => {
+        let profileUpdates = req.body;
+
+        if (!profileUpdates.oldPassword) {
+            delete profileUpdates.password;
+        }
+        
+        if (req.user.authenticate(profileUpdates.oldPassword)) {
+            if (validation.password.isWhitespace()) {
+                console.log('PASSWORD CANNOT BE WHITESPACE')
+            } else if (!validation.password.willPassRequiredLength(profileUpdates.password, 6)) {
+                delete profileUpdates.password;
+                
+                console.log('PASSWORD DOES NOT MATCH REQURIED LENGTH')
+            } else {
+                profileUpdates.password = encryption.generateHashedPassword(req.user.salt, profileUpdates.password);
+            }
+        } else {
+            delete profileUpdates.password;
+        }
+
+        User.findOneAndUpdate({ "username": req.user.username }, profileUpdates, { upsert: true }, (err, doc) => {
+            if (err) {
+                console.error(err)
+            }
+        });
+
+        res.redirect('/user/profile');
     }
 };

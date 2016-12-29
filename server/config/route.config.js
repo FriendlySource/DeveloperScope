@@ -1,6 +1,7 @@
 'use strict';
 
 const controllers = require('../controllers/base.controller');
+const csrf = require('csurf') ({ cookie: true });
 
 module.exports = (app) => {
     app
@@ -11,8 +12,8 @@ module.exports = (app) => {
         .get('/user/login', controllers.user.login)
         .post('/user/login', controllers.user.authenticate)
         .post('/user/logout', controllers.user.logout)
-        .get('/user/profile', controllers.user.showProfile)
-        .post('/user/profile', controllers.user.updateProfile)
+        .get('/user/profile', csrf, controllers.user.showProfile)
+        .post('/user/profile', csrf, controllers.user.updateProfile)
         .get('/error', function(req, res) {
             res.render('partial/404', {
                 message: "The page was not found",

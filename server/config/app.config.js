@@ -25,10 +25,14 @@ module.exports = (config, app) => {
         .use(passport.initialize())
         .use(passport.session())
         .use((req, res, next) => {
-
             if (req.user) {
                 res.locals.currentUser = req.user;
             }
+            // if (req.method == 'POST') {
+            //     console.log('FORM CSRF=' + req.body._csrf)
+
+            //     console.log('SESSION CSRF=' + req.session.csrfSecret)
+            // }
 
             next();
         })
