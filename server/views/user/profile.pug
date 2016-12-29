@@ -1,3 +1,29 @@
 extends ../layout/index
 block mainContent
-    h2.title !{mainTitle}
+    section
+        h2.title !{mainTitle}
+
+        form.form(method='POST' action='/user/profile')
+            //- PASSWORD
+            article.page-article
+                h2.title.left Change Password
+
+                .form-input
+                    label(for='old-password') Old Password
+                    input(type="password" id="old-password" placeholder='Old Password' name='oldPassword')
+
+                .form-input
+                    label(for='new-password') New Password
+                    input(type="password" id="new-password" placeholder='New Password' name='newPassword')
+            //- NAME
+            article.page-article
+                h2.title.left Change Name
+
+                .form-input
+                    label(for='name') Name
+                    input(type="text" id="name" placeholder='Name' name='name')
+                
+                //- SUBMIT
+                .form-input
+                    input(type='submit' class='button success' value='Save')
+                    input(type='hidden' name='_csrf' value=csrf)
