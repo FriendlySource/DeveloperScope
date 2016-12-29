@@ -1,9 +1,9 @@
 #layout-navigation {
     position: fixed;
-    top: convertToMainUnit(headerTopBarHeight);
+    top: convertToMainUnit($headerTopBarHeight);
     left: 0;
     background-color: $white;
-    height: 100vh;
+    height: calc(100vh - #{convertToMainUnit($headerTopBarHeight)});
     transition: width .5s 0s;
     font-size: 0;
     box-shadow: 0 0 convertToMainUnit(1) $black;

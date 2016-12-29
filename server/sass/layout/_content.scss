@@ -1,5 +1,5 @@
 #layout-content {
-    max-height: 90vh;
+    height: calc(100vh - #{convertToMainUnit($headerTopBarHeight)});
     padding: convertToMainUnit(20);
     overflow: auto;
 

@@ -116,10 +116,10 @@ body,
 
 #layout-navigation {
   position: fixed;
-  top: headerTopBarHeight/10rem;
+  top: 6.4rem;
   left: 0;
   background-color: #FFF;
-  height: 100vh;
+  height: calc(100vh - 6.4rem);
   transition: width .5s 0s;
   font-size: 0;
   box-shadow: 0 0 0.1rem #000; }
@@ -196,7 +196,7 @@ body,
       font-size: 28px; }
 
 #layout-content {
-  max-height: 90vh;
+  height: calc(100vh - 6.4rem);
   padding: 2rem;
   overflow: auto; }
   #layout-content .content {
