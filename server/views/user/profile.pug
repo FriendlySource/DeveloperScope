@@ -25,11 +25,15 @@ block mainContent
 
                 .form-input
                     label(for='old-password') Old Password
-                    input(type="password" id="old-password" placeholder='Old Password' name='oldPassword' pattern=".{6,}" title="Password must be altleast 6 characters long")
+                    input(type="password" id="old-password" placeholder='Old Password' name='oldPassword' value='' pattern=".{6,}" title="Password must be altleast 6 characters long")
 
                 .form-input
                     label(for='new-password') New Password
-                    input(type="password" id="new-password" placeholder='New Password' name='password' pattern=".{6,}" title="Password must be altleast 6 characters long")
+                    input(type="password" id="new-password" placeholder='New Password' name='password' value='' pattern=".{6,}" title="Password must be altleast 6 characters long")
+                
+                .form-input
+                    label(for='confirm-new-password') Confirm New Password
+                    input(type="password" id="confirm-new-password" placeholder='Confirm New Password' name='confirmPassword' value='' pattern=".{6,}" title="Confirm Password must be altleast 6 characters long")
                 
                 //- SUBMIT
                 .form-input

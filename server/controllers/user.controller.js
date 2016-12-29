@@ -126,6 +126,12 @@ module.exports = {
                     isFormValid = false;
                     delete profileUpdates.password;
                 }
+
+                if (!validation.password.willMatchConfirm(profileUpdates.password, profileUpdates.confirmPassword)) {
+                    profileUpdates.globalMessages.push('Confirm Password does not match New Password');
+                    isFormValid = false;
+                    delete profileUpdates.password;
+                }
             }
         }
         
