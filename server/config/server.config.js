@@ -18,9 +18,9 @@ module.exports = {
         port: process.env.NODE_PORT,
         rootPath: serverRootPath,
         db: {
-            port: process.env.MONGO_DB_PORT,
-            domain: process.env.MONGO_DB_DOMAIN,
-            name: process.env.MONGO_DB_NAME,
+            port: process.env.MONGODB_PORT,
+            domain: process.env.MONGODB_DOMAIN,
+            name: process.env.MONGODB_NAME,
             connection: process.env.MONGODB_CONNECTION_STRING
         }
     }
