@@ -14,17 +14,19 @@
         color: $baseColorDark;
         text-decoration: none;
         
-        &:before {
-            content: '{';
+        &:before,
+        &:after {
             display: inline;
             color: $baseColorDark;
+        }
+
+        &:before {
+            content: '{';
             margin-right: convertToMainUnit(10);
         }
 
         &:after {
             content: '}';
-            display: inline;
-            color: $baseColorDark;
             margin-left: convertToMainUnit(10);
         }
     }
