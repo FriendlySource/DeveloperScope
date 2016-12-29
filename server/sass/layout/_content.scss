@@ -2,13 +2,19 @@
     height: calc(100vh - #{convertToMainUnit($headerTopBarHeight)});
     padding: convertToMainUnit(20);
     overflow: auto;
+}
 
-    .content {
-        background-color: $baseColorMed;
-    }
-
+.content {
+    background-color: $baseColorMed;
+    
     .title {
-        font-size: convertToMainUnit(20);
-        text-transform: capitalize;
+        font-size: convertToMainUnit(18);
+        text-transform: uppercase;
+        text-align: center;
+        padding: convertToMainUnit(5);
+
+        &.left {
+            text-align: left;
+        }
     }
 }
