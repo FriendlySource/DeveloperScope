@@ -5,17 +5,26 @@ block mainContent
     p MainContent
 
     form.form(method='POST', action='/user/register')
+        //- NAME
+        .form-input
+            label(for="register-name") Name
+            input(type='text' id='register-name' value=name name='name' placeholder='Name' required)
+        //- USERNAME
         .form-input
             label(for="register-username") Username
-            input(type='text' id='register-username' value=username name='username' placeholder='Username')
-        
+            input(type='text' id='register-username' value=username name='username' placeholder='Username' required)
+        //- EMAIL
+        .form-input
+            label(for="register-email") Email
+            input(type='email' id='register-email' value=email name='email' placeholder='Email' required)
+        //- PASSWORD
         .form-input
             label(for="register-password") Password
-            input(type='password' id="register-password" value='' name='password' placeholder='Username')
-        
+            input(type='password' id="register-password" value='' name='password' placeholder='Username' required)
+        //- CONFIRM PASSWORD
         .form-input
             label(for="register-confirm-password") Confirm Password
-            input(type='password' id="register-confirm-password" value='' name='confirmPassword' placeholder='Username')
-        
+            input(type='password' id="register-confirm-password" value='' name='confirmPassword' placeholder='Username' required)
+        //- SUBMIT
         .form-input
             input.button.success(type='submit' value='register now')

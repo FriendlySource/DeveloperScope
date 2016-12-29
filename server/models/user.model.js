@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const encryption = require('../utilities/encryption');
 const constantMsg = require('../utilities/messages-constants.js');
 
+// ADMIN DEFAULTS
 const defaultAdminPassword = 'admin';
 const defaultAdminUsername = 'admin';
-const defaultAdminRoles = ['Admin'];
+const defaultAdminRoles = ['admin'];
+const defaultAdminName = 'Admin';
+const defaultAdminEmail = 'admin@developerscope.com';
 
 // USER
 let userSchema = mongoose.Schema({
@@ -23,7 +26,18 @@ let userSchema = mongoose.Schema({
         type: String,
         required: constantMsg.requiredProp,
     },
-    roles: [String]
+    roles: {
+        type:  [String],
+        default: ['user']
+    },
+    name: {
+        type: String,
+        required: constantMsg.requiredProp
+    },
+    email: {
+        type: String,
+        required: constantMsg.requiredProp
+    }
 },{
     timestamps: true
 });
@@ -51,8 +65,12 @@ module.exports.seedAdminUser = (user) => {
                     username: defaultAdminUsername,
                     salt: generatedSalt,
                     password: generatedPassword,
-                    roles: defaultAdminRoles
+                    roles: defaultAdminRoles,
+                    name: defaultAdminName,
+                    email: defaultAdminEmail
                 });
+
+                console.log('Seed Admin successful');
             }
         })
 }
