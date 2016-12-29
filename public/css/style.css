@@ -132,6 +132,12 @@ body,
     color: #666; }
     .navigation-items:hover .navigation-item-link.active:before, .navigation-items:hover #layout-header .active.top-bar-item:before, #layout-header .navigation-items:hover .active.top-bar-item:before {
       color: #666; }
+    .navigation-items:hover .navigation-item-link.active:hover, .navigation-items:hover #layout-header .active.top-bar-item:hover, #layout-header .navigation-items:hover .active.top-bar-item:hover {
+      color: #FFF;
+      background-color: #666;
+      transition: all .5s 0s; }
+      .navigation-items:hover .navigation-item-link.active:hover:before, .navigation-items:hover #layout-header .active.top-bar-item:hover:before, #layout-header .navigation-items:hover .active.top-bar-item:hover:before {
+        color: #FFF; }
 
 .navigation-item-link, #layout-header .top-bar-item {
   display: block;
@@ -155,11 +161,11 @@ body,
     vertical-align: middle;
     line-height: .5; }
   .navigation-item-link:hover, #layout-header .top-bar-item:hover {
-    color: #FFF !important;
-    background-color: #666 !important;
-    transition: all 0.5s 0s !important; }
+    color: #FFF;
+    background-color: #666;
+    transition: all .5s 0s; }
     .navigation-item-link:hover:before, #layout-header .top-bar-item:hover:before {
-      color: #FFF !important; }
+      color: #FFF; }
 
 #layout-header {
   position: fixed;

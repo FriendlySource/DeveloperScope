@@ -12,7 +12,7 @@
 .navigation-items {
     list-style-type: none;
     text-align: left;
-
+    
     &:hover {
         .navigation-item-link {
             &.active {
@@ -21,6 +21,16 @@
 
                 &:before {
                     color: $baseColorDark;
+                }
+
+                &:hover {
+                    color: $baseColorLight;
+                    background-color: $baseColorDark;
+                    transition: all .5s 0s;
+                    
+                    &:before {
+                        color: $baseColorLight;
+                    }
                 }
             }
         }
@@ -57,14 +67,13 @@
         line-height: .5;
     }
 
-    // TODO: remove important
-    &:hover, {
-        color: $baseColorLight!important;
-        background-color: $baseColorDark!important;
-        transition: all .5s 0s!important;
+    &:hover {
+        color: $baseColorLight;
+        background-color: $baseColorDark;
+        transition: all .5s 0s;
         
         &:before {
-            color: $baseColorLight!important;
+            color: $baseColorLight;
         }
     }
 }
