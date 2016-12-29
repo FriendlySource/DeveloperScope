@@ -181,6 +181,16 @@ body,
   #layout-header .app-name {
     color: #666;
     text-decoration: none; }
+    #layout-header .app-name:before {
+      content: '{';
+      display: inline;
+      color: #666;
+      margin-right: 1rem; }
+    #layout-header .app-name:after {
+      content: '}';
+      display: inline;
+      color: #666;
+      margin-left: 1rem; }
   #layout-header .top-bar {
     position: relative; }
   #layout-header .top-bar-right {

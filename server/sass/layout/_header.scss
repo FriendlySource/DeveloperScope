@@ -13,6 +13,20 @@
     .app-name {
         color: $baseColorDark;
         text-decoration: none;
+        
+        &:before {
+            content: '{';
+            display: inline;
+            color: $baseColorDark;
+            margin-right: convertToMainUnit(10);
+        }
+
+        &:after {
+            content: '}';
+            display: inline;
+            color: $baseColorDark;
+            margin-left: convertToMainUnit(10);
+        }
     }
 
     .top-bar {
