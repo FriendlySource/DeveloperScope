@@ -15,16 +15,16 @@ const defaultAdminEmail = 'admin@developerscope.com';
 let userSchema = mongoose.Schema({
     username: {
         type: String,
-        required: constantMsg.requiredProp,
+        required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["username"]),
         unique: true
     },
     salt: {
         type: String,
-        required: constantMsg.requiredProp,
+        required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["salt"]),
     },
     password: {
         type: String,
-        required: constantMsg.requiredProp,
+        required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["password"]),
     },
     roles: {
         type:  [String],
@@ -32,11 +32,11 @@ let userSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        required: constantMsg.requiredProp
+        required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["name"])
     },
     email: {
         type: String,
-        required: constantMsg.requiredProp
+        required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["email"])
     }
 },{
     timestamps: true
