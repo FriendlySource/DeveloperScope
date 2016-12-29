@@ -6,22 +6,22 @@ const serverRootPath = path.normalize(path.join(__dirname, '../../'));
 module.exports = {
     development: {
         rootPath: serverRootPath,
+        port: 3000,
         db: {
             port: 27017,
             domain: "localhost",
             name: "developer_scope",
             connection: 'mongodb://localhost:27017/developer_scope'
-        },
-        port: 3000
+        }
     },
     production: {
+        port: process.env.NODE_PORT,
+        rootPath: serverRootPath,
         db: {
             port: process.env.MONGO_DB_PORT,
             domain: process.env.MONGO_DB_DOMAIN,
             name: process.env.MONGO_DB_NAME,
-            connection: `${process.env.MONGODB_DB_URL}${process.env.MONGO_DB_NAME}`
-        },
-        port: process.env.port,
-        rootPath: serverRootPath
+            connection: process.env.MONGODB_CONNECTION_STRING
+        }
     }
 };
