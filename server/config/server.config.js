@@ -21,7 +21,7 @@ module.exports = {
             port: process.env.MONGODB_PORT,
             domain: process.env.MONGODB_DOMAIN,
             name: process.env.MONGODB_DATABASE,
-            connection: process.env.MONGODB_CONNECTION_STRING
+            connection: process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL
         }
     }
 };
