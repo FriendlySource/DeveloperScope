@@ -5,8 +5,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const env = process.env.NODE_ENV || 'development';
-const port = process.env.NODE_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-const ip = process.env.NODE_IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+const port = process.env.NODE_PORT || 3000;
+const ip = process.env.NODE_IP || '127.0.0.1';
 
 const serverConfig = require('./server/config/server.config.js')[env];
 
