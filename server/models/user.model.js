@@ -42,7 +42,8 @@ let userSchema = mongoose.Schema({
         type: Object,
         default: {
             layout: {
-                type: 'expanded'
+                type: 'expanded',
+                theme: ''
             }
         }
     }

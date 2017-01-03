@@ -5,12 +5,23 @@ block mainContent
     p MainContent
 
     form.form(action='/user/settings', method='post')
-        .form-input
-            label(for='layout-type') Layout
+        //- LAYOUT
+        .article.page-article
+            h2.title.left Layout
+            //- TYPE
+            .form-input
+                label(for='layout-type') Type
 
-            select(id='layout-type' name='layoutType')
-                option(value='expanded' selected=user.settings.layout.type=='expanded') Expanded
-                option(value='collapsed' selected=user.settings.layout.type=='collapsed') Collapsed
-                
+                select(id='layout-type' name='layoutType')
+                    option(value='expanded' selected=user.settings.layout.type=='expanded') Expanded
+                    option(value='collapsed' selected=user.settings.layout.type=='collapsed') Collapsed
+            //- THEME
+            .form-input
+                label(for='layout-theme') Theme
+
+                select(id='layout-theme' name='layoutTheme')
+                    option(value='Default') Default
+                    option(value='Dark') Dark
+        //- SUBMIT
         .form-input
             input.button.success(type='submit' value='Save')

@@ -160,7 +160,8 @@ module.exports = {
         let settingsUpdates = {
             settings: {
                 layout: {
-                    type: req.body.layoutType
+                    type: req.body.layoutType,
+                    theme: req.body.layoutTheme
                 }
             }
         };
