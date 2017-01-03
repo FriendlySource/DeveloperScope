@@ -16,5 +16,13 @@ block mainContent
         article.page-article
             h2.title.left Skills:
 
-            each skill in locals.currentUser.scope.skills
-                p !{skill.name}
+            table
+                thead
+                    tr
+                        th Name
+                        th Description
+                tbody
+                    each skill in locals.currentUser.scope.skills
+                        tr
+                            td !{skill.name}
+                            td !{skill.description}
