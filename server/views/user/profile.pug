@@ -1,8 +1,10 @@
 extends ../layout/index
 block mainContent
     section
+        //- MAIN
         h2.title !{mainTitle}
 
+        //- PROFILE FORM
         form.form(method='POST' action='/user/profile')
             //- NAME
             article.page-article
@@ -18,7 +20,6 @@ block mainContent
                 .form-input
                     label(for='email') Email
                     input(type="email" id="email" name='email' value=email placeholder='Email' required)
-
             //- PASSWORD
             article.page-article
                 h2.title.left Change Password
@@ -34,7 +35,7 @@ block mainContent
                 .form-input
                     label(for='confirm-new-password') Confirm New Password
                     input(type="password" id="confirm-new-password" placeholder='Confirm New Password' name='confirmPassword' value='' pattern=".{6,}" title="Confirm Password must be altleast 6 characters long")
-                
+               
                 //- SUBMIT
                 .form-input
                     input(type='submit' class='button success' value='Save')
