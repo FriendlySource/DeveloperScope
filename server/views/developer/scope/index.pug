@@ -9,10 +9,11 @@ block mainContent
             .data-row
                 i.material-icons phone
                 strong !{locals.currentUser.mobile}
-            .data-row
-                i.material-icons email
-                strong !{locals.currentUser.email}
-            .data-row
+                
+                a(href=`mailto:${locals.currentUser.email}` title="Email")
+                    i.material-icons email
+                    | !{locals.currentUser.email}
+                
                 i.material-icons location_on
                 strong !{locals.currentUser.address}
         //- SKILLS
