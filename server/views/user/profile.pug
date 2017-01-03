@@ -6,23 +6,29 @@ block mainContent
 
         //- PROFILE FORM
         form.form(method='POST' action='/user/profile')
-            //- NAME
+            //- MAIN INFO
             article.page-article
-                h2.title.left Change Name
+                h2.title.left Main Information
 
                 .form-input
                     label(for='name') Name
-                    input(type="text" id="name" name='name' value=name placeholder='Name' required pattern=".{3,}" title="Name must be altleast 3 characters long")
-            //- EMAIL
+                    input(type="text" id="name" name='name' value=name placeholder='Peter' required pattern=".{3,}" title="Name must be altleast 3 characters long")
+                
+                .form-input
+                    label(for='address') Address
+                    input(type="text" id="address" name='address' value=address placeholder='Greece, Athens')
+
+                .form-input
+                    label(for='mobile') Mobile
+                    input(type="number" id="mobile" name='mobile' value=mobile placeholder='+359 888 00 00 00')
+            
+            //- AUTHENTICATION
             article.page-article
-                h2.title.left Change Email
+                h2.title.left Authentication
 
                 .form-input
                     label(for='email') Email
-                    input(type="email" id="email" name='email' value=email placeholder='Email' required)
-            //- PASSWORD
-            article.page-article
-                h2.title.left Change Password
+                    input(type="email" id="email" name='email' value=email placeholder='example@example.com' required)
 
                 .form-input
                     label(for='old-password') Old Password

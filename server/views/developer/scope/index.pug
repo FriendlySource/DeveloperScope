@@ -1,5 +1,20 @@
 extends ../../layout/index
 block mainContent
-    h2.title !{mainTitle}
+    section.page-section
+        h2.title !{mainTitle}
+        //- MAIN INFO
+        article.page-article
+            h2.title.left Main Info
 
-    p Scope Index
+            .data-row
+                strong Mobile !{locals.currentUser.mobile}
+            .data-row
+                strong Email !{locals.currentUser.email}
+            .data-row
+                strong Address !{locals.currentUser.address}
+        //- SKILLS
+        article.page-article
+            h2.title.left Skills:
+
+            each skill in locals.currentUser.scope.skills
+                p !{skill.name}

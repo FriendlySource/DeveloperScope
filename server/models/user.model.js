@@ -38,12 +38,37 @@ let userSchema = mongoose.Schema({
         type: String,
         required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["email"])
     },
+    mobile: {
+        type: String,
+        default: ''
+    },
+    address: {
+        type: String,
+        default: ''
+    },
     settings: {
         type: Object,
         default: {
             layout: {
                 type: 'expanded',
                 theme: ''
+            }
+        }
+    },
+    portfolio: {
+        type: Array,
+        default: []
+    },
+    scope: {
+        type: Object,
+        default: {
+            positions: {
+                type: [],
+                default: []
+            },
+            skills: {
+                type: [],
+                default: []
             }
         }
     }
@@ -69,14 +94,18 @@ module.exports.seedAdminUser = (user) => {
             if (!users.length) {
                 let generatedSalt = encryption.generateSalt(),
                     generatedPassword = encryption.generateHashedPassword(generatedSalt, defaultAdminPassword);
-                
+
                 User.create({
                     username: defaultAdminUsername,
                     salt: generatedSalt,
                     password: generatedPassword,
                     roles: defaultAdminRoles,
                     name: defaultAdminName,
-                    email: defaultAdminEmail
+                    email: defaultAdminEmail,
+                    scope: {
+                        skills: [{ name: 'God', description: 'Can do everything' }],
+                        positions: []
+                    }
                 });
 
                 console.log('Seed Admin successful');
