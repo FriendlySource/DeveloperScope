@@ -9,4 +9,4 @@
 ul.navigation-items
     each item in navItems
         li.navigation-item
-            a(href=item.href, class=`navigation-item-link ${item.label == activePage ? 'active' : ''} ${item.className ? item.className : ''}` title=item.label data-icon=item.icon) !{item.label}
+            a(href=item.href, class=`navigation-item-link ${item.label.toLowerCase() == activePage.toLowerCase() ? 'active' : ''} ${item.className ? item.className : ''}` title=item.label data-icon=item.icon) !{item.label}

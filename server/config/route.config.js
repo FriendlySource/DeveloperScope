@@ -33,6 +33,8 @@ module.exports = (app) => {
         .post('/user/logout', auth.isAuthenticated, controllers.user.logout)
         .get('/user/profile', csrf, auth.isAuthenticated, controllers.user.showProfile)
         .post('/user/profile', csrf, auth.isAuthenticated, controllers.user.updateProfile)
+        .get('/developer/portfolio', controllers.portfolio.index)
+        .get('/developer/scope', controllers.scope.index)
         .get('/error', function(req, res) {
             res.render('partial/404', {
                 message: "The page was not found",
