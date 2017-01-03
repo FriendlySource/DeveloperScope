@@ -157,6 +157,20 @@ module.exports = {
         });
     },
     updateSettings: (req, res) => {
+        let settingsUpdates = {
+            settings: {
+                layout: {
+                    type: req.body.layoutType
+                }
+            }
+        };
 
+        User.findOneAndUpdate({ "username": req.user.username }, settingsUpdates, { upsert: true }, (err, doc) => {
+            if (err) {
+                console.error(err)
+            }
+        });
+
+        res.redirect('/user/settings');
     }
 };

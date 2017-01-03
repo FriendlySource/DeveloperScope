@@ -37,6 +37,14 @@ let userSchema = mongoose.Schema({
     email: {
         type: String,
         required: constantMsg.generateMessage(constantMsg.error.requiredProp, ["email"])
+    },
+    settings: {
+        type: Object,
+        default: {
+            layout: {
+                type: 'expanded'
+            }
+        }
     }
 },{
     timestamps: true

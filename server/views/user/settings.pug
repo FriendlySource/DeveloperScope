@@ -8,9 +8,9 @@ block mainContent
         .form-input
             label(for='layout-type') Layout
 
-            select(id='layout-type')
-                option(value='expanded') Expanded
-                option(value='collapsed') Collapsed
+            select(id='layout-type' name='layoutType')
+                option(value='expanded' selected=user.settings.layout.type=='expanded') Expanded
+                option(value='collapsed' selected=user.settings.layout.type=='collapsed') Collapsed
                 
         .form-input
             input.button.success(type='submit' value='Save')
