@@ -1,0 +1,16 @@
+extends ../layout/index
+block mainContent
+    h2.title !{mainTitle}
+
+    p MainContent
+
+    form.form(action='/user/settings', method='post')
+        .form-input
+            label(for='layout-type') Layout
+
+            select(id='layout-type')
+                option(value='expanded') Expanded
+                option(value='collapsed') Collapsed
+                
+        .form-input
+            input.button.success(type='submit' value='Save')

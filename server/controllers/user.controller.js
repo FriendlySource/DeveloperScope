@@ -148,5 +148,15 @@ module.exports = {
             profileUpdates.csrfToken = req.csrfToken();
             res.render('user/profile', profileUpdates);
         }
+    },
+    showSettings: (req, res) => {
+        res.render('user/settings', {
+            mainTitle: 'Settings',
+            activePage: 'Settings',
+            user: req.user
+        });
+    },
+    updateSettings: (req, res) => {
+
     }
 };
