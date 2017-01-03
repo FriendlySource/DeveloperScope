@@ -1,5 +1,5 @@
 -
-    var navItems = [
+    var navItemsLoggedIn = [
         { "label": "Home", "href": "/", "icon": "home" },
         { "label": "Portfolio", "href": "/developer/portfolio", "icon": "code" },
         { "label": "Scope", "href": "/developer/scope", "icon": "developer_board" },
@@ -7,7 +7,17 @@
         { "label": "About", "href": "/about", "icon": "new_releases" },
     ];
 
+    var navItemsNotLoggedIn = [
+        { "label": "Home", "href": "/", "icon": "home" },
+        { "label": "About", "href": "/about", "icon": "new_releases" },
+    ];
+
 ul.navigation-items
-    each item in navItems
-        li.navigation-item
-            a(href=item.href, class=`navigation-item-link ${item.label == activePage ? 'active' : ''} ${item.className ? item.className : ''}` title=item.label data-icon=item.icon) !{item.label}
+    if (locals.currentUser)
+        each item in navItemsLoggedIn
+            li.navigation-item
+                a(href=item.href, class=`navigation-item-link ${item.label == activePage ? 'active' : ''} ${item.className ? item.className : ''}` title=item.label data-icon=item.icon) !{item.label}
+    else
+        each item in navItemsNotLoggedIn
+            li.navigation-item
+                a(href=item.href, class=`navigation-item-link ${item.label == activePage ? 'active' : ''} ${item.className ? item.className : ''}` title=item.label data-icon=item.icon) !{item.label}

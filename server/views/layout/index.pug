@@ -5,7 +5,7 @@ html#root
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title Developer Scope
         link(rel="stylesheet", href="/css/style.css")
-    body#layout(class=locals.currentUser.settings.layout.type)
+    body#layout(class=`${locals.currentUser ? locals.currentUser.settings.layout.type : 'expanded'}`)
         header#layout-header
             include header
             
