@@ -4,14 +4,17 @@ block mainContent
         h2.title !{mainTitle}
         //- MAIN INFO
         article.page-article
-            h2.title.left Main Info
+            h2.title.left Main Information
 
             .data-row
-                strong Mobile !{locals.currentUser.mobile}
+                i.material-icons phone
+                strong !{locals.currentUser.mobile}
             .data-row
-                strong Email !{locals.currentUser.email}
+                i.material-icons email
+                strong !{locals.currentUser.email}
             .data-row
-                strong Address !{locals.currentUser.address}
+                i.material-icons location_on
+                strong !{locals.currentUser.address}
         //- SKILLS
         article.page-article
             h2.title.left Skills:
