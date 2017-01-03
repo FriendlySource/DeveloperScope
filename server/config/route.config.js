@@ -33,10 +33,10 @@ module.exports = (app) => {
         .post('/user/logout', auth.isAuthenticated, controllers.user.logout)
         .get('/user/profile', csrf, auth.isAuthenticated, controllers.user.showProfile)
         .post('/user/profile', csrf, auth.isAuthenticated, controllers.user.updateProfile)
-        .get('/user/settings', controllers.user.showSettings)
-        .post('/user/settings', controllers.user.updateSettings)
-        .get('/developer/portfolio', controllers.portfolio.index)
-        .get('/developer/scope', controllers.scope.index)
+        .get('/user/settings', auth.isAuthenticated, controllers.user.showSettings)
+        .post('/user/settings', auth.isAuthenticated, controllers.user.updateSettings)
+        .get('/developer/portfolio', auth.isAuthenticated, controllers.portfolio.index)
+        .get('/developer/scope', auth.isAuthenticated, controllers.scope.index)
         .get('/error', function(req, res) {
             res.render('partial/404', {
                 message: "The page was not found",
