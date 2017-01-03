@@ -33,4 +33,9 @@
         cursor: pointer;
         font-size: convertToMainUnit(14);
     }
+
+    select {
+        margin: 0 convertToMainUnit(5);
+        font-size: convertToMainUnit(14);
+    }
 }
