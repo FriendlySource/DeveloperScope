@@ -96,8 +96,6 @@ module.exports = {
     showProfile: (req, res) => {
         res.render('user/profile', {
             mainTitle: `${req.user.username} Profile`,
-            name: req.user.name,
-            email: req.user.email,
             activePage: 'profile',
             csrfToken: req.csrfToken()
         });

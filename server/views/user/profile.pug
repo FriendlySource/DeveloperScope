@@ -12,15 +12,15 @@ block mainContent
 
                 .form-input
                     label(for='name') Name
-                    input(type="text" id="name" name='name' value=name placeholder='Peter' required pattern=".{3,}" title="Name must be altleast 3 characters long")
+                    input(type="text" id="name" name='name' value=locals.currentUser.name placeholder='Peter' required pattern=".{3,}" title="Name must be altleast 3 characters long")
                 
                 .form-input
                     label(for='address') Address
-                    input(type="text" id="address" name='address' value=address placeholder='Greece, Athens')
+                    input(type="text" id="address" name='address' value=locals.currentUser.address placeholder='Greece, Athens')
 
                 .form-input
                     label(for='mobile') Mobile
-                    input(type="number" id="mobile" name='mobile' value=mobile placeholder='+359 888 00 00 00')
+                    input(type="number" id="mobile" name='mobile' value=locals.currentUser.mobile placeholder='+359 888 00 00 00')
             
             //- AUTHENTICATION
             article.page-article
@@ -28,7 +28,7 @@ block mainContent
 
                 .form-input
                     label(for='email') Email
-                    input(type="email" id="email" name='email' value=email placeholder='example@example.com' required)
+                    input(type="email" id="email" name='email' value=locals.currentUser.email placeholder='example@example.com' required)
 
                 .form-input
                     label(for='old-password') Old Password
