@@ -3,6 +3,14 @@ $pixleUnit: px;
 $remUnit: rem;
 $percentUnit: %;
 
+// DIMENSIONS
+$max: 100%;
+$zero: 0;
+$desktopWidth: 1336#{$pixleUnit};
+$tabletWidth: 768#{$pixleUnit};
+$mobileWidth: 480#{$pixleUnit};
+
+
 // CUSTOM FONT
 $robotoRegular: 'Roboto-Regular';
 
@@ -13,7 +21,7 @@ $mainSize: 10 !default;
 $defaultFontStack: #{$robotoRegular}, 'Calibri', 'Arial', sans-serif;
 $defaultTextColor: #000;
 
-// PREDEFINED
+// CUSTOM
 $headerTopBarHeight: 64;
 $navigationExpanded: 256;
 $navigationCollapsed: 64;
@@ -21,6 +29,8 @@ $navigationCollapsed: 64;
 // DEFAULT COLORS
 $black: #000;
 $white: #FFF;
+$red: #F00;
+$green: #0C0;
 $whiteDark: #EEE;
 $greyDark: #666;
 
