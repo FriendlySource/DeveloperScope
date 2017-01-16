@@ -4,5 +4,11 @@ module.exports = {
             mainTitle: 'Scope',
             activePage: 'Scope'
         });
+    },
+    user: (req, res) => {
+        res.render('developer/scope/preview', {
+            mainTitle: 'Scope',
+            activePage: 'Scope'
+        });
     }
 };
