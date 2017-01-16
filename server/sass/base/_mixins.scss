@@ -15,3 +15,9 @@
     -ms-flex: $order $width;
     flex: $order $width;
 }
+
+@mixin breakpoint($breakpoint, $condition: max-width, $mediaType: screen) {
+    @media #{$mediaType} and (#{$condition}: $breakpoint) {
+        @content;
+    }
+}
