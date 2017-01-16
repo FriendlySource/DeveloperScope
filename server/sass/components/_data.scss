@@ -1,0 +1,39 @@
+.data-row {
+    &.general-info {
+        display: table;
+        width: $max;
+        max-width: $tabletWidth;
+        margin: 0 auto; 
+        
+        .info-data {
+            display: table-cell;
+            width: 33.3%;
+            font-size: convertToMainUnit(16);
+            vertical-align: middle;
+        }
+    }
+
+    @include breakpoint($tabletWidth) {
+        &,
+        &.general-info {
+            display: block;
+            text-align: left;
+            
+            .info-data {
+                display: block;
+                width: $max;
+            }
+        }
+    }
+}
+
+.info-data {
+    .material-icons {
+        margin-right: convertToMainUnit(10);
+        font-size: convertToMainUnit(24);
+    }    
+
+    a {
+        color: $defaultTextColor;
+    }
+}
