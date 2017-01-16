@@ -1,0 +1,13 @@
+.material-icons {
+    &.location {
+        color: $red;
+    }
+
+    &.phone {
+        color: $green;
+    }
+
+    &.email {
+        color: $defaultTextColor;
+    }
+}
