@@ -4,18 +4,29 @@ block mainContent
         h2.title !{mainTitle}
         //- MAIN INFO
         article.page-article
-            h2.title.left Main Information
+            h2.title.left General Information
 
-            .data-row
-                i.material-icons phone
-                strong !{locals.currentUser.mobile}
-                
-                a(href=`mailto:${locals.currentUser.email}` title="Email")
-                    i.material-icons email
-                    | !{locals.currentUser.email}
-                
-                i.material-icons location_on
-                strong !{locals.currentUser.address}
+            ul.data-row.general-info
+                li.info-data
+                    strong
+                        i.material-icons.location location_on
+                        if (locals.currentUser.address)
+                            | !{locals.currentUser.address}
+                        else
+                            a(href="/user/profile" title="Your address") Add address
+
+                li.info-data
+                    strong
+                        i.material-icons.phone phone
+                        if (locals.currentUser.mobile)
+                            | !{locals.currentUser.mobile}
+                        else
+                            a(href="/user/profile" title="Your phone number") Add phone number
+
+                li.info-data
+                    a(href=`mailto:${locals.currentUser.email}` title="Email")
+                        i.material-icons.email email
+                        | !{locals.currentUser.email}
         //- SKILLS
         article.page-article
             h2.title.left Skills:
