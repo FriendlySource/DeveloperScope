@@ -37,6 +37,7 @@ module.exports = (app) => {
         .post('/user/settings', auth.isAuthenticated, controllers.user.updateSettings)
         .get('/developer/portfolio', auth.isAuthenticated, controllers.portfolio.index)
         .get('/developer/scope', auth.isAuthenticated, controllers.scope.index)
+        .get('/developer/scope/:id', controllers.scope.user)
         .get('/error', function(req, res) {
             res.render('partial/404', {
                 message: "The page was not found",
