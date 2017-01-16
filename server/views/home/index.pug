@@ -3,3 +3,10 @@ block mainContent
     h2.title !{mainTitle}
 
     p Developer Scope Index content
+
+    .top
+        | Users TOP
+        ul
+            each user in top
+                li
+                    a(href=`/developer/scope/${user.username}` title=`${user.username} scope`) !{user.username}
