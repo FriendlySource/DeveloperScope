@@ -87,28 +87,51 @@ userSchema.method({
 
 let User = mongoose.model('User', userSchema);
 
-// SEED ADMIN
-module.exports.seedAdminUser = (user) => {
+// GET TOP
+module.exports.top = (topLimit) => {
+    return User
+        .find({})
+        .limit(topLimit || 10);
+}
+
+// SEED USER
+module.exports.seed = (userList) => {
+    var userToCreate = {};
+
     User.find({})
         .then(users => {
             if (!users.length) {
-                let generatedSalt = encryption.generateSalt(),
-                    generatedPassword = encryption.generateHashedPassword(generatedSalt, defaultAdminPassword);
+                userList.forEach(username => {
+                    let generatedSalt = encryption.generateSalt();
 
-                User.create({
-                    username: defaultAdminUsername,
-                    salt: generatedSalt,
-                    password: generatedPassword,
-                    roles: defaultAdminRoles,
-                    name: defaultAdminName,
-                    email: defaultAdminEmail,
-                    scope: {
-                        skills: [{ name: 'God', description: 'Can do everything' }],
-                        positions: []
+                    if (username == 'admin') {
+                        userToCreate.username = defaultAdminUsername;
+                        userToCreate.name = defaultAdminName;
+                        userToCreate.email = defaultAdminEmail;
+                        userToCreate.password = encryption.generateHashedPassword(generatedSalt, defaultAdminPassword);
+                        userToCreate.roles = defaultAdminRoles;
+                        userToCreate.scope = {
+                            skills: [{ name: 'God', description: 'Can do everything' }],
+                            positions: []
+                        };
+                    } else {
+                        userToCreate.username = username;
+                        userToCreate.name = username;
+                        userToCreate.email = `${username}@example.com`;
+                        userToCreate.password = encryption.generateHashedPassword(generatedSalt, '123123');
+                        userToCreate.roles = ['user'];
+                        userToCreate.scope = {
+                            skills: [],
+                            positions: []
+                        };
                     }
+
+                    userToCreate.salt = generatedSalt;
+
+                    User.create(userToCreate);
                 });
 
-                console.log('Seed Admin successful');
+                console.log('User seed success');
             }
-        })
+        });
 }
